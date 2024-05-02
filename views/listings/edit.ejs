@@ -36,12 +36,34 @@
         >
         <div class="invalid-feedback">Description Should be Valid!</div>
       </div>
+
       <div class="mb-3">
         <img src="<%= previewImg %>" alt="preview_img" />
       </div>
+
       <div class="mb-3">
         <label for="image" class="form-label">Upload Image</label>
         <input name="listing[image]" type="file" class="form-control" />
+      </div>
+
+      <div class="mb-3">
+        <label for="category" class="form-label">Category</label>
+        <select
+          name="listing[category]"
+          type="file"
+          class="form-select"
+          required
+        >
+          <option selected disabled>Choose Category</option>
+          <option value="rooms">Rooms</option>
+          <option value="iconic_city">Iconic City</option>
+          <option value="mountains">Mountains</option>
+          <option value="castle">Castle</option>
+          <option value="amazing_pool">Amazing Pool</option>
+          <option value="camping">Camping</option>
+          <option value="farm">Farm</option>
+          <option value="arctic">Arctic</option>
+        </select>
       </div>
 
       <div class="row">
