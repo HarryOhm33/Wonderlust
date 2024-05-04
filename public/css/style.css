@@ -183,3 +183,15 @@ body {
     font-size: 4rem !important;
   }
 }
+
+/* Review */
+
+.review {
+  display: flex;
+  /* justify-content: space-evenly; */
+}
+
+.review-i {
+  width: 14rem;
+  padding: 0.5rem;
+}

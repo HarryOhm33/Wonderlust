@@ -96,9 +96,9 @@ currUser._id.equals("6636843459f429c61e191c97"))) { %>
   <hr />
   <% } %> <%if(listing.reviews.length > 0 ) { %>
   <p><b>All Reviews</b></p>
-  <div class="row">
+  <div class="row review">
     <% for(review of listing.reviews) { %>
-    <div class="card col-5 ms-3 mb-3">
+    <div class="card ms-3 mb-3 review-i">
       <div class="card-body">
         <div class="card-body"><b>@<%= review.author.username %></b></div>
         <p
