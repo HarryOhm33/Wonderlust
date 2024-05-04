@@ -25,8 +25,8 @@
     </div>
   </div>
 </div>
-<% if((currUser && currUser._id.equals(listing.owner._id)) ||
-currUser._id.equals("6636843459f429c61e191c97")) { %>
+<% if((currUser && currUser._id.equals(listing.owner._id)) || (currUSer &&
+currUser._id.equals("6636843459f429c61e191c97"))) { %>
 <div class="btns offset-2">
   <form method="GET" action="/listings/<%= listing.id %>/edit">
     <button class="btn edit-btn">Edit</button>
@@ -107,8 +107,8 @@ currUser._id.equals("6636843459f429c61e191c97")) { %>
         ></p>
         <p class="card-text"><%= review.comment %></p>
       </div>
-      <% if(currUser && currUser._id.equals(review.author._id) ||
-      currUser._id.equals("6636843459f429c61e191c97")) {%>
+      <% if((currUser && currUser._id.equals(review.author._id)) || (currUSer &&
+      currUser._id.equals("6636843459f429c61e191c97"))) {%>
       <form
         method="POST"
         action="/listings/<%= listing.id %>/reviews/<%= review.id %>?_method=DELETE"
