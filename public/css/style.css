@@ -1,18 +1,30 @@
-body {
-  font-family: "Plus Jakarta Sans", sans-serif !important;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
+html {
+  height: 100%;
 }
 
-.container {
+body {
+  font-family: "Plus Jakarta Sans", sans-serif !important;
+  overflow-x: hidden;
+  margin: 0rem !important;
   flex: 1;
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 6.74rem;
 }
 
 /* Navbar */
 
-.navbar {
-  height: 5rem;
+.navbar-a {
+  height: 4rem;
+  margin-bottom: 1rem;
+  position: sticky;
+  top: 0px;
+  z-index: 12;
+  background-color: white !important;
+}
+
+.navbar-collapse {
+  background-color: white !important;
 }
 
 .fa-compass {
@@ -50,6 +62,11 @@ body {
 }
 
 .f-info {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
   height: 5rem;
   background-color: #ebebeb;
   text-align: center;
@@ -62,14 +79,29 @@ body {
 /* Cards */
 
 .cards-container {
-  display: flex !important;
-  justify-content: space-evenly !important;
+  width: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  margin: auto;
 }
 
 .listing-card {
+  width: 14rem;
   border: none;
   font-size: 0.8rem !important;
-  margin-bottom: 2rem;
+  margin: 1rem;
+}
+
+@media (max-width: 530px) {
+  .cards-container {
+    width: 98%;
+  }
+
+  .listing-card {
+    width: 9.5rem;
+    margin: 0.5rem;
+  }
 }
 
 .card-img-top {
@@ -109,6 +141,10 @@ body {
 
 /* Show page */
 
+.show-card {
+  border: none !important;
+}
+
 .show-img {
   height: 50vh;
 }
@@ -131,5 +167,19 @@ body {
 
 #map {
   height: 18rem;
-  width: 100vh;
+  border-radius: 10px;
+}
+
+/* Login/SignUp */
+
+.ls-page {
+  overflow: hidden;
+}
+
+/* flash */
+
+@media (max-width: 630px) {
+  .flash {
+    font-size: 4rem !important;
+  }
 }

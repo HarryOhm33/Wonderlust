@@ -24,12 +24,13 @@
 </style>
 
 <nav
-  class="navbar navbar-expand-md bg-body-light bg-white border-bottom sticky-top"
+  class="navbar navbar-expand-sm bg-body-light bg-white border-bottom navbar-a"
 >
   <div class="container-fluid">
     <a class="navbar-brand" href="/listings"
-      ><i class="fa-regular fa-compass"></i
-    ></a>
+      ><i class="fa-regular fa-compass"></i> <b>Wonderlust</b></a
+    >
+
     <button
       class="navbar-toggler"
       type="button"
@@ -45,7 +46,7 @@
       <div class="navbar-nav">
         <a class="nav-link" href="/listings">All Listings</a>
       </div>
-      <div class="navbar-nav ms-auto">
+      <!-- <div class="navbar-nav ms-auto">
         <form class="d-flex" role="search">
           <input
             class="form-control me-2 s-box"
@@ -56,7 +57,7 @@
             <i class="fa-solid fa-magnifying-glass"></i>Search
           </button>
         </form>
-      </div>
+      </div> -->
       <div class="navbar-nav ms-auto">
         <a class="nav-link" href="/listings/new">Airbnb your home</a>
         <% if(!currUser) { %>

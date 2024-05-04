@@ -1,0 +1,187 @@
+<style>
+  .filters {
+    height: 3rem !important;
+    width: 85%;
+    display: flex;
+    background: white !important;
+    align-items: center;
+    height: 4rem;
+    padding: 0.5rem;
+    margin: auto;
+    font-size: 0.8rem;
+    z-index: 10;
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+
+  .filter {
+    margin: 0rem 1rem;
+    width: fit-content;
+    display: inline-block;
+    text-align: center;
+    opacity: 0.7;
+    margin: 0rem 0.5rem !important;
+  }
+
+  .filter:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
+
+  .tax-toggle {
+    height: 2.2rem;
+    width: 13rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .tax-info {
+    display: none;
+  }
+
+  .filter-show button {
+    height: 2.2rem;
+    width: 4.5rem;
+    font-size: 12.8px;
+    background: none;
+    padding: 0.3rem;
+    border: 1px solid black;
+  }
+
+  .categories {
+    margin: auto;
+    margin-top: 1rem;
+  }
+
+  .filter-btn {
+    height: 2.2rem;
+    width: 4.6rem;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  @media (max-width: 992px) {
+    .filter-btn {
+      display: none;
+    }
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid filters">
+    <div class="tax-toggle">
+      <div class="form-check-reverse form-switch">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          role="switch"
+          id="flexSwitchCheckDefault"
+        />
+        <label class="form-check-label" for="flexSwitchCheckDefault"
+          >Display Total After Taxes</label
+        >
+      </div>
+    </div>
+    <div class="filter-show">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        Filters
+        <i class="fa-solid fa-filter"></i>
+      </button>
+    </div>
+    <div class="collapse navbar-collapse text-center" id="navbarNav">
+      <ul class="navbar-nav categories">
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="/listings/category/rooms"
+            ><div class="filter">
+              <div><i class="fa-solid fa-bed"></i></div>
+              <p>Rooms</p>
+            </div></a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="/listings/category/iconic_city"
+            ><div class="filter">
+              <div><i class="fa-solid fa-mountain-city"></i></div>
+              <p>Iconic city</p>
+            </div></a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="/listings/category/mountains"
+            ><div class="filter">
+              <div><i class="fa-solid fa-mountain"></i></div>
+              <p>Mountains</p>
+            </div></a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="/listings/category/castles"
+            ><div class="filter">
+              <div><i class="fa-brands fa-fort-awesome"></i></div>
+              <p>Castles</p>
+            </div></a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="/listings/category/amazing_pool"
+            ><div class="filter">
+              <div><i class="fa-solid fa-person-swimming"></i></div>
+              <p>Amazing Pool</p>
+            </div></a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="/listings/category/camping"
+            ><div class="filter">
+              <div><i class="fa-solid fa-campground"></i></div>
+              <p>Camping</p>
+            </div></a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link active"
+            aria-current="page"
+            href="/listings/category/farm"
+            ><div class="filter">
+              <div><i class="fa-solid fa-cow"></i></div>
+              <p>Farm</p>
+            </div></a
+          >
+        </li>
+      </ul>
+      <div class="filter-btn">
+        Filters
+        <i class="fa-solid fa-filter"></i>
+      </div>
+    </div>
+  </div>
+</nav>

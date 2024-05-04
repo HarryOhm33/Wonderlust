@@ -2,9 +2,16 @@ const Listing = require("../models/listing");
 const mbxGeocoding = require("@mapbox/mapbox-sdk/services/geocoding");
 const mapToken = process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
+const { cloudinary } = require("../couldConfig");
 
 module.exports.index = async (req, res) => {
   const allListing = await Listing.find({});
+  res.render("./listings/index.ejs", { allListing });
+};
+
+module.exports.filter = async (req, res) => {
+  let { filter } = req.params;
+  const allListing = await Listing.find({ category: filter });
   res.render("./listings/index.ejs", { allListing });
 };
 
@@ -28,7 +35,7 @@ module.exports.createListing = async (req, res, next) => {
   newListing.image = { url, filename };
   newListing.geometry = response.body.features[0].geometry;
   let data = await newListing.save();
-  console.log(data);
+  // console.log(data);
   req.flash("success", "New Listing Created Successfully!");
   res.redirect("/listings");
 };
@@ -78,7 +85,16 @@ module.exports.updateListing = async (req, res) => {
 
 module.exports.deleteListing = async (req, res) => {
   let { id } = req.params;
+  let listing = await Listing.findById(id);
+  let imgUrl = listing.image.url;
+  let splitUrl = imgUrl.split("/");
+  let imgName = splitUrl[splitUrl.length - 1].split(".")[0];
+  // console.log(imgName);
+
   await Listing.findByIdAndDelete(id);
+
+  cloudinary.uploader.destroy(`wonderlust/${imgName}`);
+
   req.flash("success", "Listing Deleted Successfully!");
   res.redirect("/listings");
 };
